@@ -1,8 +1,11 @@
 function addUser()
 {
-    user_name = document.getElementById("user_name").ariaValueMax;
+    user_name = document.getElementById("user_name").value;
 
-    localStorage.setItem("user_name", user_name);
+    firebase.database().rel("/").child(space_name).update({
+        purpose : "adding user"
+
+    });
 
     window.location = "kwitter_room.html";
 }
